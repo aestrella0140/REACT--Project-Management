@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
 const brypt = require('bcrypt');
 
-const userSchema = new Schema({
+const UserSchema = new Schema({
     firstName: {
         type: String,
         required: true,
@@ -27,7 +27,7 @@ const userSchema = new Schema({
     },
 });
 
-userSchema.pre('save', async function (next) {
+UserSchema.pre('save', async function (next) {
     if (this.inNew || this.isModified('password')) {
         const saltRounds = 10;
         this.password = await brypt.hash(this.password, saltRounds);
@@ -36,10 +36,10 @@ userSchema.pre('save', async function (next) {
     next();
 });
 
-userSchema.methods.isCorrectPassword = async function (password) {
+UserSchema.methods.isCorrectPassword = async function (password) {
     return brypt.compare(password, this.password);
 };
 
-const User = model('User', userSchema);
+const User = model('User', UserSchema);
 
 module.exports = User;
