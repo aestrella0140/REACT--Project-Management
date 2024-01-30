@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model, default: mongoose } = require('mongoose');
 const brypt = require('bcrypt');
 
 const UserSchema = new Schema({
@@ -25,7 +25,13 @@ const UserSchema = new Schema({
         required: true,
         minlength: 8,
     },
+    Projects: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Project',
+    }]
 });
+
+
 
 UserSchema.pre('save', async function (next) {
     if (this.inNew || this.isModified('password')) {
