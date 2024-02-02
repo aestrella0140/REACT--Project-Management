@@ -16,7 +16,7 @@ const ProjectSchema = new Schema({
         type: String, 
         required: true,
     },
-    Priority: {
+    priority: {
         type: String,
         required: true,
     },
@@ -24,7 +24,7 @@ const ProjectSchema = new Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
     }],
-    Dependencies: {
+    dependencies: {
         type: String,
         required: true,
         trim: true,

@@ -58,6 +58,30 @@ const resolvers = {
             }
             throw AuthenticationError;
         },
+
+        createProject: async (parent, { title, description, Status, priority, Users, dependencies }) => {
+            const project = await Project.create({ title, description, Status, priority, Users, dependencies });
+            
+
+            return { project };
+        },
+
+        removeProject: async (parent, args, context) => {
+            if (context.project) {
+                return Project.findByIdAndDelete({ _id: context.project._id });
+            }
+            throw AuthenticationError;
+        },
+
+        updateProject: async (parent, args, context ) => {
+            if (context.project) {
+                return Project.findByIdAndUpdate(context.project.id, args, {
+                    new: true,
+                });
+            }
+
+            throw AuthenticationError;
+        },
     },
 };
 
