@@ -19,11 +19,11 @@ const resolvers = {
             throw AuthenticationError;
         },
 
-        getProjects: async () => {
+        projects: async () => {
             return Project.find();
         },
 
-        getProject: async (parent, { projectId }) => {
+        project: async (parent, { projectId }) => {
             return Project.findOne({ _id: projectId })
         },
     },
