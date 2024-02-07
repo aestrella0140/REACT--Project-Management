@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import {
-  AppolloClient,
+  ApolloClient,
   InMemoryCache,
   ApolloProvider,
   createHttpLink,
@@ -21,15 +21,15 @@ const authLink = setContext((_, {headers}) => {
   };
 });
 
-const client = new AppolloClient({
+const client = new ApolloClient({
   link: authLink.concat(httpLink), 
   cache: new InMemoryCache(),
 });
 
-import './App.css'
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
     <ApolloProvider client={client}>

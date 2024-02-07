@@ -24,7 +24,7 @@ const resolvers = {
         },
 
         project: async (parent, { projectId }) => {
-            return Project.findOne({ _id: projectId })
+            return Project.findOne({ _id: projectId });
         },
     },
 
