@@ -1,11 +1,13 @@
 import React from 'react';
-import { useFormik } from 'formik';
+import { useFormik, Form, Field } from 'formik';
 
 import { useMutation } from '@apollo/client';
-
+import { ADD_USER } from '../utils/mutations'; 
 import Auth from '../utils/auth';
 
 const SignupForm = () => {
+    const [createUser, { loading }] = useMutation(ADD_USER);
+    
     const formik = useFormik({
         initialValues: {
             firstName: '',
@@ -13,8 +15,20 @@ const SignupForm = () => {
             email: '',
             password: '',
         },
-        onSubmit: values => {
-            alert(JSON.stringify(values, null, 2));
+        onSubmit: (values) => {
+            createUser({ variables: values })
+            .then(respones => {
+                const { data } = respones;
+                const { email, password } = values;
+                return Auth.login(email, password)
+            })
+            .then(() => {
+                alert('User created and logged in');
+            })
+            .catch(error => {
+                console.log(error);
+                alert('couldnt create user or log in');
+            });
         },
     });
     return (
