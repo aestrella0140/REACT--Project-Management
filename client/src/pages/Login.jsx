@@ -6,7 +6,7 @@ import { LOGIN_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 
 const LoginForm = () => {
-    const [loginUser, { loading }] = useMutation(LOGIN_USER);
+    const [loginUser, { loading, error }] = useMutation(LOGIN_USER);
 
     const formik = useFormik({
         initialValues: {
@@ -50,6 +50,12 @@ const LoginForm = () => {
              onChange={formik.handleChange}
              value={formik.values.password}
              />
+             {error ? (
+                    <div>
+                        <p>Please check if your email or password is correct.</p>
+                    </div>
+                  ): null}
+                  <button type='submit'>Login</button>
         </form>
     )
 };
