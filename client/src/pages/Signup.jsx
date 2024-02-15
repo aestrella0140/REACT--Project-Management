@@ -49,7 +49,7 @@ const SignupForm = () => {
                 onChange={formik.handleChange}
                 value={formik.values.email} />
 
-            <label htmlFor='email'>email</label>
+            <label htmlFor='email'>Email</label>
             <input
                 type='email'
                 name='email'
