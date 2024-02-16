@@ -33,6 +33,17 @@ label {
   font-weight: 600;
 }
 
+button {
+  background-color: #62529c;
+  border: none;
+  padding: 4px 2px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 80px;
+  height: 35px;
+  color: #ffffff;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -41,7 +52,5 @@ label {
   a:hover {
     color: #747bff;
   }
-  button {
-    background-color: #f9f9f9;
-  }
+  
 }

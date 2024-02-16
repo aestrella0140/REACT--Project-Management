@@ -32,45 +32,55 @@ const SignupForm = () => {
         },
     });
     return (
-        <form className='signup' onSubmit={formik.handleSubmit}>
-            <div className='form'>
+        <div className='signup'>
+            <form className='form' onSubmit={formik.handleSubmit}>
                 <h2>Signup here!</h2>
-                <label htmlFor='firstName'>first Name</label>
+                <label htmlFor="firstName">first Name</label>
                 <input
-                    type='text'
+                    type='firstName'
                     name='firstName'
                     id='firstName'
+                    placeholder='enter first name here'
                     onChange={formik.handleChange}
-                    value={formik.values.lastName} />
+                    value={formik.values.lastName}
+                />
 
-                <label htmlFor='lastName'>Last Name</label>
+                <label htmlFor="lastName">Last Name</label>
                 <input
-                    type='text'
+                    type='lastName'
                     name='lastName'
                     id='lastName'
+                    placeholder='enter last name here'
                     onChange={formik.handleChange}
-                    value={formik.values.email} />
+                    value={formik.values.email}
+                />
 
-                <label htmlFor='email'>Email</label>
+                <label htmlFor="email">Email</label>
                 <input
                     type='email'
                     name='email'
                     id='email'
+                    placeholder='enter email here'
                     onChange={formik.handleChange}
                     value={formik.values.firstName} />
 
-                <label htmlFor='password'>Password</label>
+                <label htmlFor="password">Password</label>
                 <input
                     type='password'
                     name='password'
                     id='pwd'
+                    placeholder='enter password here'
                     onChange={formik.handleChange}
-                    value={formik.values.password} />
-            </div>
+                    value={formik.values.password}
+                />
+                <div>
+                    <button type='submit'>Submit</button>
+                </div>
+            </form>
+        </div>
 
 
-        </form>
-    )
+    );
 };
 
 export default SignupForm;
