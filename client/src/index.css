@@ -44,6 +44,26 @@ button {
   color: #ffffff;
 }
 
+.Login {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 375px;
+  height: 340px;
+  border-style: solid;
+  border-radius: 15px;
+  border-width: 1px;
+  margin-left: 610px;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 100px;
+  margin-right: 55px;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

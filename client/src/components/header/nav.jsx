@@ -35,6 +35,22 @@ function Nav() {
             );
         }
     }
+
+    return (
+        <header>
+            <div>
+                <h2>
+                <Link to='/' >
+                    Continuous Improvement
+                </Link>
+                </h2>
+
+                <nav>
+                    {showNav()}
+                </nav>
+            </div>
+        </header>
+    )
 }
 
 export default Nav;
