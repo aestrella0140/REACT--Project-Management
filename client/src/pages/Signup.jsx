@@ -42,9 +42,9 @@ const SignupForm = () => {
                     id='firstName'
                     placeholder='enter first name here'
                     onChange={formik.handleChange}
-                    value={formik.values.lastName}
+                    value={formik.values.firstName}
                 />
-
+                
                 <label htmlFor="lastName">Last Name</label>
                 <input
                     type='lastName'
@@ -52,17 +52,17 @@ const SignupForm = () => {
                     id='lastName'
                     placeholder='enter last name here'
                     onChange={formik.handleChange}
-                    value={formik.values.email}
+                    value={formik.values.lastName}
                 />
 
                 <label htmlFor="email">Email</label>
                 <input
-                    type='email'
-                    name='email'
-                    id='email'
+                    type="email"
+                    name="email"
+                    id="email"
                     placeholder='enter email here'
                     onChange={formik.handleChange}
-                    value={formik.values.firstName} />
+                    value={formik.values.email} />
 
                 <label htmlFor="password">Password</label>
                 <input
