@@ -17,8 +17,8 @@ const SignupForm = () => {
         },
         onSubmit: (values) => {
             createUser({ variables: values })
-                .then(respones => {
-                    const { data } = respones;
+                .then(response => {
+                    const { data } = response;
                     const { email, password } = values;
                     return Auth.login(email, password)
                 })
