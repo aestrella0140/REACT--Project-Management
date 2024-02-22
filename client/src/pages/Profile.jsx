@@ -34,4 +34,14 @@ const Profile = () => {
             </h4>
         );
     }
-}
+
+    // need a project list component first then bring in both project list and project form in t
+    // in the return
+    return (
+        <div>
+
+        </div>
+    );
+};
+
+export default Profile();
