@@ -28,7 +28,15 @@ const ProjectList = ({ projects, isLoggedInUser = false }) => {
 
     return(
         <div>
-            
+            <div>
+                {projects &&
+                projects.map((project) => (
+                    <div key={project}>
+
+                    </div>
+                ))
+                }
+            </div>
         </div>
     )
-}
+};

@@ -6,7 +6,7 @@ function Nav() {
     function showNav() {
         if (Auth.loggedIn()) {
             return (
-                <div>
+                <div className='nav'>
                     <ul>
                         <li>
                             <a href="/" onClick={() => Auth.logout()}>
@@ -18,7 +18,7 @@ function Nav() {
             );
         } else {
             return (
-                <div>
+                <div className='nav'>
                     <ul>
                         <li>
                             <Link to='/Signup'>
@@ -38,7 +38,7 @@ function Nav() {
 
     return (
         <header>
-            <div>
+            <div className='nav'>
                 <h2>
                 <Link to='/' >
                     Continuous Improvement
