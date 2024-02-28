@@ -1,6 +1,6 @@
 import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-
+// this to create project card
 import project from '../components/card/project';
 
 import { QUERY_SINGLE_USER, QUERY_ME } from '../utils/queries';
