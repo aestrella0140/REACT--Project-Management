@@ -25,3 +25,5 @@ const dash = () => {
         </main>
     );
 };
+
+export default dash;

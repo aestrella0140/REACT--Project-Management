@@ -6,6 +6,7 @@ import './index.css';
 
 import LoginForm from './pages/Login.jsx';
 import SignupForm from './pages/Signup.jsx';
+import dash from './pages/dashboard.jsx';
 
 const router = createBrowserRouter([
   {

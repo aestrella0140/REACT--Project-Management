@@ -1,7 +1,9 @@
 import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 // this to create project card
-import project from '../components/card/project';
+import Project from '../components/card/project';
+// project list
+import ProjectList from '../components/projectList';
 
 import { QUERY_SINGLE_USER, QUERY_ME } from '../utils/queries';
 import Auth from '../utils/auth';
@@ -39,7 +41,20 @@ const Profile = () => {
     // in the return
     return (
         <div>
+            <h2>
+                {userId ? `${profile.name}'s` : 'Your'} friends projects are here
+            </h2>
 
+            {profile.projects?.length > 0 && (
+                <ProjectList 
+                projects={profile.projects}
+                isLoggedInUser={!userId && true}
+                />
+            )}
+
+            <div>
+                <Project userId={profile._id}/>
+            </div>
         </div>
     );
 };
