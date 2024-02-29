@@ -4,7 +4,7 @@ import ProjectList from '../components/projectList';
 
 import { QUERY_PROJECTS } from "../utils/queries";
 
-const dash = () => {
+const dashboard = () => {
     const { loading, data } = useQuery(QUERY_PROJECTS);
     const projects = data.projects || [];
 
@@ -26,4 +26,4 @@ const dash = () => {
     );
 };
 
-export default dash;
+export default dashboard;

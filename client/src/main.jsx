@@ -6,7 +6,8 @@ import './index.css';
 
 import LoginForm from './pages/Login.jsx';
 import SignupForm from './pages/Signup.jsx';
-import dash from './pages/dashboard.jsx';
+import Dashboard from './pages/dashboard.jsx';
+import Profile from './pages/Profile.jsx';
 
 const router = createBrowserRouter([
   {
@@ -14,14 +15,19 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        index: true, 
-        element: <LoginForm />
-      },{
+        index: true,
+        element: <Dashboard />
+      }, {
         path: '/Login',
+        element: <LoginForm />
+      }, {
+        path: '/Signup',
         element: <SignupForm />
       }, {
-        
+        path: '/Profile',
+        element: <Profile />
       }
+      
     ]
   }
 ])
