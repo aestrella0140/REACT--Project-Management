@@ -40,3 +40,5 @@ const ProjectList = ({ projects, isLoggedInUser = false }) => {
         </div>
     )
 };
+
+export default ProjectList;

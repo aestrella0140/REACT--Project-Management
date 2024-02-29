@@ -9,6 +9,16 @@ function Nav() {
                 <div className='nav'>
                     <ul>
                         <li>
+                            <Link to='/Profile' >
+                                Profile
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to='/dashboard' >
+                                dashboard
+                            </Link>
+                        </li>
+                        <li>
                             <a href="/" onClick={() => Auth.logout()}>
                                 Logout
                             </a>
@@ -40,9 +50,9 @@ function Nav() {
         <header>
             <div className='nav'>
                 <h2>
-                <Link to='/' >
-                    Continuous Improvement
-                </Link>
+                    <Link to='/' >
+                        Continuous Improvement
+                    </Link>
                 </h2>
 
                 <nav>
