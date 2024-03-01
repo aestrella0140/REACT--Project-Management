@@ -6,7 +6,7 @@ import { QUERY_PROJECTS } from "../utils/queries";
 
 const dashboard = () => {
     const { loading, data } = useQuery(QUERY_PROJECTS);
-    const projects = data.projects || [];
+    const projects = data?.projects || [];
 
     return (
         <main>
