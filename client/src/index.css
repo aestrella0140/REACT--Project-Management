@@ -73,6 +73,19 @@ button {
   list-style: none;
   position: relative;
   margin-top: 15px;
+  background-color: #656665;
+}
+
+.link {
+  display: flex;
+  /* background-color: #da291c; */
+  color: #ffffff;
+  margin-right: 10px;
+}
+
+.ul-nav {
+  display: flex;
+  list-style: none;
 }
 
 @media (prefers-color-scheme: light) {

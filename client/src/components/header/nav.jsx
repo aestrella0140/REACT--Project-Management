@@ -7,14 +7,14 @@ function Nav() {
         if (Auth.loggedIn()) {
             return (
                 <div className='nav'>
-                    <ul>
+                    <ul className='ul-nav'>
                         <li>
-                            <Link to='/Profile' >
+                            <Link to='/Profile' className='link'>
                                 Profile
                             </Link>
                         </li>
                         <li>
-                            <Link to='/dashboard' >
+                            <Link to='/dashboard' className='link'>
                                 dashboard
                             </Link>
                         </li>
@@ -29,14 +29,14 @@ function Nav() {
         } else {
             return (
                 <div className='nav'>
-                    <ul>
+                    <ul className='ul-nav'>
                         <li>
-                            <Link to='/Signup'>
+                            <Link to='/Signup' className='link'>
                                 Signup
                             </Link>
                         </li>
                         <li>
-                            <Link to='/Login'>
+                            <Link to='/Login' className='link'>
                                 Login
                             </Link>
                         </li>
@@ -50,7 +50,7 @@ function Nav() {
         <header>
             <div className='nav'>
                 <h2>
-                    <Link to='/' >
+                    <Link to='/'className='link'>
                         Continuous Improvement
                     </Link>
                 </h2>
