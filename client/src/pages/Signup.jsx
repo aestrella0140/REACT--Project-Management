@@ -6,7 +6,7 @@ import { ADD_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 
 const SignupForm = () => {
-    const [createUser, { loading }] = useMutation(ADD_USER);
+    const [addUser, { loading }] = useMutation(ADD_USER);
 
     const formik = useFormik({
         initialValues: {
@@ -15,19 +15,26 @@ const SignupForm = () => {
             email: '',
             password: '',
         },
-        onSubmit: (values) => {
-            createUser({ variables: values })
+        onSubmit: (values, ) => {
+    
+            alert(JSON.stringify(values, null, 2));
+            addUser({ variables: values })
                 .then(response => {
                     const { data } = response;
                     const { email, password } = values;
-                    return Auth.login(email, password)
+                    return Auth.login(data.addUser.token)
                 })
-                .then(() => {
-                    alert('User created and logged in');
+                .then((token) => {
+                    console.log('received token:', token);
+                    if (!token || typeof token !== 'string') {
+                        throw new Error('invalid token');
+                    }
+                    console.log(response);
+                    console.log('User created and logged in');
                 })
                 .catch(error => {
-                    console.log(error);
-                    alert('couldnt create user or log in');
+                    console.log('error:',error);
+                    console.log('couldnt create user or log in');
                 });
         },
     });

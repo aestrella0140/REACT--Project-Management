@@ -18,14 +18,14 @@ const LoginForm = () => {
                 .then(response => {
                     const { data } = response;
                     const { email, password } = values;
-                    return Auth.login(email, password)
+                    return Auth.login(data.loginUser.token)
                 })
                 .then(() => {
-                    alert('user logged in');
+                    console.log('user logged in');
                 })
                 .catch(error => {
                     console.log(error);
-                    alert('couldnt login user');
+                    console.log('couldnt login user');
                 });
         },
     });

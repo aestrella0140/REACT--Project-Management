@@ -8,7 +8,6 @@ mutation addUser($firstName: String!, $lastName: String!, $email: String!, $pass
         _id
         firstName
         lastName
-        email
       }
     }
   }
