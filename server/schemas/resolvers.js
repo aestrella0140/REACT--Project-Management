@@ -46,10 +46,10 @@ const resolvers = {
 
             if (!correctPw) {
                 throw AuthenticationError;
-            };
+            }
 
             const token = signToken(user);
-            return {token, user };
+            return { token, user };
         },
 
         removeUser: async (parent, args, context) => {

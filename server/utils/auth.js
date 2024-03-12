@@ -6,7 +6,7 @@ const secret = 'imbatman';
 const expiration = '2hr';
 
 module.exports = {
-    AuthenticationError: new GraphQLError('Couldnt authenticat user.', {
+    AuthenticationError: new GraphQLError('Couldnt authenticate user.', {
         extensions: {
             code: 'UNAUTHENTICATED',
         },
