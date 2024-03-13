@@ -6,7 +6,7 @@ import { LOGIN_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
 
 const LoginForm = () => {
-  const [loginUser, { loading, error }] = useMutation(LOGIN_USER);
+  const [login, {error, data }] = useMutation(LOGIN_USER);
 
   const formik = useFormik({
     initialValues: {
@@ -15,11 +15,11 @@ const LoginForm = () => {
     },
     onSubmit: async (values, { setSubmitting, setErrors }) => {
       try {
-        const { data } = await loginUser({ variables: values });
-        if (!data || !data.loginUser) {
+        const { data } = await login({ variables: values });
+        if (!data || !data.login) {
           throw new Error("no data returned from the server");
         }
-        await Auth.login(data.loginUser.token);
+        await Auth.login(data.login.token);
         console.log("user logged in");
       } catch (error) {
         console.log("Error:", error.message);
@@ -44,7 +44,7 @@ const LoginForm = () => {
           value={formik.values.email}
         />
 
-        <label htmlFor="password">Password</label>
+        <label htmlFor="pwd">Password</label>
         <input
           type="password"
           placeholder="Enter password here"
