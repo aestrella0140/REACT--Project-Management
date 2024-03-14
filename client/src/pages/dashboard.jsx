@@ -2,7 +2,7 @@ import { useQuery } from "@apollo/client";
 
 import ProjectList from '../components/projectList';
 
-import { QUERY_PROJECTS } from "../utils/queries";
+import { QUERY_PROJECTS, QUERY_SINGLE_PROJECT } from "../utils/queries";
 
 const dashboard = () => {
     const { loading, data } = useQuery(QUERY_PROJECTS);

@@ -14,6 +14,13 @@ type Project {
     Status: String
     priority: String
     Users: [User]
+    dependencies: String
+    category: Category
+}
+
+type Category {
+    _id: ID
+    team: String
 }
 
 type Auth {

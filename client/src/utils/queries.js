@@ -55,3 +55,14 @@ query singleProject($projectId: ID!) {
     }
   }
 `;
+
+export const QUERY_PROJECTS_ID = gql`
+query Query($projectId: ID!) {
+  project(projectId: $projectId) {
+    category {
+      _id
+      team
+    }
+  }
+}
+`;
