@@ -32,12 +32,14 @@ type Query {
     users: [User]!
     user(userId: ID!): User
     me: User
-    projects: [Project]!
-    project(projectId: ID!): Project
+    categories: [Category]
+    projects: [category: ID, team: String] [Project]
+    project(_id: ID!): Project
 }
 
 type Mutation {
     addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
+    updateUser(firstName: String, lastName: String, email: String, password: String): User
     login(email: String!, password: String!): Auth
     removeUser: User
     createProject(title: String!, description: String!, Status: String, priority: String!, Users: [ID]!, dependencies: String!): Project

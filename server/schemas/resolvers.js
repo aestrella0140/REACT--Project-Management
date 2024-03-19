@@ -1,4 +1,4 @@
-const { User, Project } = require('../models');
+const { User, Project, Category } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
 
 const resolvers = {
@@ -19,12 +19,28 @@ const resolvers = {
             throw AuthenticationError;
         },
 
-        projects: async () => {
-            return Project.find();
+        categories: async () => {
+            return await Category.find();
         },
 
-        project: async (parent, { projectId }) => {
-            return Project.findOne({ _id: projectId });
+        projects: async (parent, { category, team }) => {
+            const params = {};
+
+            if (category) {
+                params.category = category;
+            }
+
+            if (team) {
+                params.name = {
+                    $regex: team,
+                };
+            }
+
+            return await Project.find(params).populate('category');
+        },
+
+        project: async (parent, { _id }) => {
+            return await Project.findById(_id).populate('category');
         },
     },
 
