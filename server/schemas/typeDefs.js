@@ -33,7 +33,7 @@ type Query {
     user(userId: ID!): User
     me: User
     categories: [Category]
-    projects: [category: ID, team: String] [Project]
+    projects(category: ID, team: String): [Project]
     project(_id: ID!): Project
 }
 

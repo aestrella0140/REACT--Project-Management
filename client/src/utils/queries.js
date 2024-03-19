@@ -31,16 +31,19 @@ query me {
 `;
 
 export const QUERY_PROJECTS = gql`
-query projects {
-    projects {
+query getProjects($category: ID) {
+  projects(category: $category) {
+    _id
+    title
+    description
+    priority
+    dependencies
+    Status
+    category {
       _id
-      Users {
-        _id
-        firstName
-        lastName
-      }
     }
   }
+}
 `;
 
 export const QUERY_SINGLE_PROJECT = gql`
@@ -57,12 +60,21 @@ query singleProject($projectId: ID!) {
 `;
 
 export const QUERY_PROJECTS_ID = gql`
-query Query($projectId: ID!) {
+query projectsCategoryId($projectId: ID!) {
   project(projectId: $projectId) {
     category {
       _id
       team
     }
+  }
+}
+`;
+
+export const QUERY_CATEGORIES = gql`
+{
+  categories {
+    _id
+    team
   }
 }
 `;
