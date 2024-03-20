@@ -5,3 +5,4 @@ import {
     UPDATE_CURRENT_CATEGORY,
 } from '../../utils/actions';
 import { QUERY_CATEGORIES } from '../../utils/queries';
+import { idbPromise } from "../../utils/helpers";
