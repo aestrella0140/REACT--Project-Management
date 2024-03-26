@@ -5,12 +5,30 @@ import Project from '../components/card/project';
 // project list
 import ProjectList from '../components/projectList';
 
-
+import { CREATE_PROJECT } from '../utils/mutations';
 import { QUERY_SINGLE_USER, QUERY_ME } from '../utils/queries';
 import Auth from '../utils/auth';
+import React, { useState } from 'react';
 
 const Profile = () => {
+    const [addProject] = useMutation(CREATE_PROJECT);
+    const [showProject, setShowProject] = useState(false);
     const { userId } = useParams();
+
+    const handleShowProject = () => {
+        setShowProject(!showProject);
+    };
+
+    const handleAddProject = async (projectData) => {
+        try {
+            await addProject({
+                variables: {...projectData}
+            });
+            setShowProject(false);
+        } catch (err) {
+            console.log(err);
+        }
+    }
 
     const { loading, data } = useQuery(
         userId ? QUERY_SINGLE_USER : QUERY_ME,
@@ -45,6 +63,11 @@ const Profile = () => {
             <h2>
                 {userId ? `${profile.name}'s` : 'Your'} friends projects are here
             </h2>
+
+            <div>
+                <button onClick={handleAddProject}>Add Project</button>
+                {showProject && <Project onAddProject={handleAddProject} />}
+            </div>
 
             {profile.projects?.length > 0 && (
                 <ProjectList 
