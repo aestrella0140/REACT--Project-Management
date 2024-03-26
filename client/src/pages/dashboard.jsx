@@ -1,6 +1,7 @@
 import { useQuery } from "@apollo/client";
 
 import ProjectList from '../components/projectList';
+import CategoryMenu from "../components/CategoryMenu";
 
 import { QUERY_PROJECTS, QUERY_SINGLE_PROJECT } from "../utils/queries";
 
@@ -11,6 +12,7 @@ const dashboard = () => {
     return (
         <main>
             <div>
+                <CategoryMenu />
                 <div>
                     {loading ? (
                         <div>loading...</div>
