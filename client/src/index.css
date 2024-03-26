@@ -65,11 +65,12 @@ button {
 }
 
 /*nav*/
-.nav {
+.custom-nav {
   display: flex;
   flex-direction: row;
   justify-content: first baseline;
   gap: 1400px;
+  width: 100%;
   list-style: none;
   position: relative;
   margin-top: 15px;
@@ -87,6 +88,11 @@ button {
 .ul-nav {
   display: flex;
   list-style: none;
+}
+
+/*gore logo*/
+.width-50 {
+  width: 20%;
 }
 
 @media (prefers-color-scheme: light) {

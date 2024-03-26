@@ -4,6 +4,7 @@ import React, { useState} from "react";
 import ProjectList from '../components/projectList';
 import CategoryMenu from "../components/CategoryMenu";
 import Project from '../components/card/project';
+
 import { CREATE_PROJECT } from "../utils/mutations";
 import { QUERY_PROJECTS, QUERY_SINGLE_PROJECT } from "../utils/queries";
 

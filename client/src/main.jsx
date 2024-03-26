@@ -7,6 +7,7 @@ import './index.css';
 import LoginForm from './pages/Login.jsx';
 import SignupForm from './pages/Signup.jsx';
 import Dashboard from './pages/dashboard.jsx';
+import LandingPage from './pages/landingPage.jsx';
 import Profile from './pages/Profile.jsx';
 
 const router = createBrowserRouter([
@@ -16,7 +17,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Dashboard />
+        element: <LandingPage />
       }, {
         path: '/Login',
         element: <LoginForm />
@@ -26,6 +27,9 @@ const router = createBrowserRouter([
       }, {
         path: '/Profile',
         element: <Profile />
+      }, {
+        path: '/dashboard', 
+        element: <Dashboard />
       }
     ]
   }

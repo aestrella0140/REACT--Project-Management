@@ -56,8 +56,7 @@ const Profile = () => {
         );
     }
 
-    // need a project list component first then bring in both project list and project form in t
-    // in the return
+    
     return (
         <div>
             <h2>
@@ -65,7 +64,7 @@ const Profile = () => {
             </h2>
 
             <div>
-                <button onClick={handleAddProject}>Add Project</button>
+                <button onClick={handleShowProject}>Add Project</button>
                 {showProject && <Project onAddProject={handleAddProject} />}
             </div>
 
