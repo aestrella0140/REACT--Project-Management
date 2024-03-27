@@ -19,7 +19,10 @@ const LandingPage = () => {
 
             <main role='main' className='inner cover'>
                 <h1 className='cover-heading'>Welcome to our Continuous Improvement Landing page!</h1>
-                <p>enter summary here later</p>
+
+                <p className=''>W.L Gore's continuous improvement process is all about fostering team collaboration, encouraging innovative thinking,
+                     and relentlessly pursuing incremental enhancement to products and processes. Its a culture where everyones voice matters,
+                      and the aim is to create high-quality products that lead the market.</p>
                 <p className='lead'>
                 </p>
             </main>
