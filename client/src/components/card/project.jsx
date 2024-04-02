@@ -21,8 +21,15 @@ const projectForm = () => {
       createProject({ variables: values })
         .then((response) => {
           const { data } = response;
-          const { title, description, Status, priority, Users, dependencies, category } =
-            values;
+          const {
+            title,
+            description,
+            Status,
+            priority,
+            Users,
+            dependencies,
+            category,
+          } = values;
         })
         .then(() => {
           // going to use toastify here instead of alert
@@ -34,77 +41,77 @@ const projectForm = () => {
     },
   });
   return (
-    <form onSubmit={formik.handleSubmit}>
-      <label htmlFor="title">Title</label>
-      <input
-        type="title"
-        name="title"
-        id="title"
-        placeholder="Enter title here"
-        onChange={formik.handleChange}
-        value={formik.values.title}
-      />
+    <div className="custom-card  col-12">
+      <form className="project-form" onSubmit={formik.handleSubmit}>
+        <label htmlFor="title">Title</label>
+        <input
+          type="title"
+          name="title"
+          id="title"
+          placeholder="Enter title here"
+          onChange={formik.handleChange}
+          value={formik.values.title}
+        />
 
-      <label htmlFor="description">Description</label>
-      <input
-        type="description"
-        name="description"
-        id="description"
-        placeholder="Enter description here"
-        onChange={formik.handleChange}
-        value={formik.values.description}
-      />
+        <label htmlFor="description">Description</label>
+        <input
+          type="description"
+          name="description"
+          id="description"
+          placeholder="Enter description here"
+          onChange={formik.handleChange}
+          value={formik.values.description}
+        />
 
-      <label htmlFor="Status">Status</label>
-      <input
-        type="text"
-        name="Status"
-        id="Status"
-        placeholder="Enter Status here"
-        onChange={formik.handleChange}
-        value={formik.values.Status}
-      />
+        <label htmlFor="Status">Status</label>
+        <input
+          type="text"
+          name="Status"
+          id="Status"
+          placeholder="Enter Status here"
+          onChange={formik.handleChange}
+          value={formik.values.Status}
+        />
 
-      <label htmlFor="priority">Priority</label>
-      <input
-        type="text"
-        name="priority"
-        id="priority"
-        placeholder="Choose priority of project"
-        onChange={formik.handleChange}
-        value={formik.values.priority}
-      />
+        <label htmlFor="priority">Priority</label>
+        <input
+          type="text"
+          name="priority"
+          id="priority"
+          placeholder="Choose priority of project"
+          onChange={formik.handleChange}
+          value={formik.values.priority}
+        />
 
-      <label htmlFor="Users">Users</label>
-      <input
-        type="text"
-        name="Users"
-        id="Users"
-        placeholder="Add Users to project"
-        onChange={formik.handleChange}
-        value={formik.values.Users}
-      />
+        <label htmlFor="Users">Users</label>
+        <input
+          type="text"
+          name="Users"
+          id="Users"
+          placeholder="Add Users to project"
+          onChange={formik.handleChange}
+          value={formik.values.Users}
+        />
 
-      <label htmlFor="dependencies">Dependencies</label>
-      <input
-        type="text"
-        name="dependencies"
-        id="dependencies"
-        placeholder="Add dependencies to project"
-        onChange={formik.handleChange}
-        value={formik.values.dependencies}
-      />
+        <label htmlFor="dependencies">Dependencies</label>
+        <input
+          type="text"
+          name="dependencies"
+          id="dependencies"
+          placeholder="Add dependencies to project"
+          onChange={formik.handleChange}
+          value={formik.values.dependencies}
+        />
 
-      <label htmlFor="category">Category</label>
-      <input
-        type="text"
-        name="category"
-        id="category"
-        placeholder="Select category to project"
-        onChange={formik.handleChange}
-        value={formik.values.category}
-      />
-    </form>
+        <label htmlFor="category">Category</label>
+        <Field as="select" name="category" id="category">
+          <option value="">select</option>
+          <option value="option1">AC</option>
+          <option value="option2">SWaGA</option>
+          <option value="option3">Viatorr</option>
+        </Field>
+      </form>
+    </div>
   );
 };
 
