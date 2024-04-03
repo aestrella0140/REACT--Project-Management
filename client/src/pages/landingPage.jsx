@@ -8,7 +8,7 @@ const LandingPage = () => {
 
 
     return (
-        <body className='text-center'>
+        <div className='text-center'>
 
             <div className='cover-container d-flex w-100 h-100 p-3 mx-auto flex-column'></div>
             <header className='masthead mb-auto'></header>
@@ -26,7 +26,7 @@ const LandingPage = () => {
                 <p className='lead'>
                 </p>
             </main>
-        </body>
+        </div>
     )
 };
 
