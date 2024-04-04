@@ -34,7 +34,7 @@ label {
 }
 
 button {
-  background-color: #62529c;
+  background-color: #da291c;
   border: none;
   padding: 4px 2px;
   margin: 4px 2px;
@@ -100,17 +100,30 @@ button {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 30px;
-  height: 50px;
-  border-style: solid;
-  border-width: 1px;
+  height: 210px;
 }
 
 .project-form {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  border-style: hidden;
   
 }
+
+.top {
+  display: flex;
+}
+
+.middle {
+  display: flex;
+  flex-direction: row;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: row;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
