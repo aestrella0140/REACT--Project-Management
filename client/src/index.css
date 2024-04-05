@@ -100,7 +100,7 @@ button {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  height: 210px;
+  height: 610px;
 }
 
 .project-form {
@@ -117,11 +117,24 @@ button {
 .middle {
   display: flex;
   flex-direction: row;
+  margin: 10px;
 }
 
 .bottom {
   display: flex;
   flex-direction: row;
+  margin: 10px;
+}
+
+.description-field {
+  width: 250px;
+  height: 220px;
+  padding: 10px 0;
+  line-height: normal;
+}
+
+.status-field {
+height: 30px;
 }
 
 @media (prefers-color-scheme: light) {

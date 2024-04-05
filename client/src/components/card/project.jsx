@@ -105,7 +105,7 @@ const projectForm = () => {
 
             <div className="middle">
               <label htmlFor="description">Description</label>
-              <Field
+              <Field className="description-field"
                 type="description"
                 name="description"
                 id="description"
@@ -113,7 +113,7 @@ const projectForm = () => {
               />
 
               <label htmlFor="Status">Status</label>
-              <Field
+              <Field className="status-field"
                 type="text"
                 name="Status"
                 id="Status"
@@ -123,16 +123,16 @@ const projectForm = () => {
 
             <div className="bottom">
               <label htmlFor="priority">Priority</label>
-              <Field
-                type="text"
-                name="priority"
-                id="priority"
-                placeholder="Choose priority of project"
-              />
+              <Field as="select" name="priority" id="priority">
+                <option value="">select</option>
+                <option value="optionOne">low</option>
+                <option value="optionTwo">moderate</option>
+                <option value="optionThree">high</option>
+              </Field>
 
-              <div>
+              <div >
                 <label htmlFor="dependencies">Dependencies</label>
-                <Field
+                <Field 
                   type="text"
                   name="dependencies"
                   id="dependencies"
