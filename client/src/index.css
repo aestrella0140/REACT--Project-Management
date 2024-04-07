@@ -100,7 +100,17 @@ button {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  height: 610px;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 375px;
+  width: 930px !important;
+  background-color: #ece0e0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  
+  box-sizing: border-box;
 }
 
 .project-form {
@@ -131,6 +141,14 @@ button {
   padding: 5px 0 190px 0;
   white-space: pre-wrap;
   overflow-y: auto;
+}
+
+.description-container {
+  display: flex;
+}
+
+.desc-label {
+align-self: flex-start;
 }
 
 .status-field {

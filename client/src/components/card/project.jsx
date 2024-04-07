@@ -110,8 +110,8 @@ const projectForm = () => {
             </div>
 
             <div className="middle">
-              <div>
-                <label htmlFor="description">Description</label>
+              <div className="description-container">
+                <label className="desc-label" htmlFor="description">Description</label>
                 <Field
                   as="textarea"
                   className="description-field"
