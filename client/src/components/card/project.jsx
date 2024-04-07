@@ -78,61 +78,76 @@ const projectForm = () => {
         {() => (
           <Form className="project-form">
             <div className="top">
-              <label htmlFor="title">Title</label>
-              <Field
-                type="title"
-                name="title"
-                id="title"
-                placeholder="Enter title here"
-              />
+              <div className="card-1">
+                <label htmlFor="title">Title</label>
+                <Field
+                  type="title"
+                  name="title"
+                  id="title"
+                  placeholder="Enter title here"
+                />
+              </div>
 
-              <label htmlFor="category">Category</label>
-              <Field as="select" name="category" id="category">
-                <option value="">select</option>
-                <option value="option1">AC</option>
-                <option value="option2">SWaGA</option>
-                <option value="option3">Viatorr</option>
-              </Field>
+              <div className="card-1">
+                <label htmlFor="category">Category</label>
+                <Field as="select" name="category" id="category">
+                  <option value="">select</option>
+                  <option value="option1">AC</option>
+                  <option value="option2">SWaGA</option>
+                  <option value="option3">Viatorr</option>
+                </Field>
+              </div>
 
-              <label htmlFor="Users">Users</label>
-              <Field
-                type="text"
-                name="Users"
-                id="Users"
-                placeholder="Add Users to project"
-              />
+              <div className="card-1">
+                <label htmlFor="Users">Users</label>
+                <Field
+                  type="text"
+                  name="Users"
+                  id="Users"
+                  placeholder="Add Users to project"
+                />
+              </div>
             </div>
 
             <div className="middle">
-              <label htmlFor="description">Description</label>
-              <Field className="description-field"
-                type="description"
-                name="description"
-                id="description"
-                placeholder="Enter description here"
-              />
+              <div>
+                <label htmlFor="description">Description</label>
+                <Field
+                  as="textarea"
+                  className="description-field"
+                  type="description"
+                  name="description"
+                  id="description"
+                  placeholder="Enter description here"
+                />
+              </div>
 
-              <label htmlFor="Status">Status</label>
-              <Field className="status-field"
-                type="text"
-                name="Status"
-                id="Status"
-                placeholder="Enter Status here"
-              />
+              <div className="card-2">
+                <label htmlFor="Status">Status</label>
+                <Field
+                  className="status-field"
+                  type="text"
+                  name="Status"
+                  id="Status"
+                  placeholder="Enter Status here"
+                />
+              </div>
             </div>
 
             <div className="bottom">
-              <label htmlFor="priority">Priority</label>
-              <Field as="select" name="priority" id="priority">
-                <option value="">select</option>
-                <option value="optionOne">low</option>
-                <option value="optionTwo">moderate</option>
-                <option value="optionThree">high</option>
-              </Field>
+              <div>
+                <label htmlFor="priority">Priority</label>
+                <Field as="select" name="priority" id="priority">
+                  <option value="">select</option>
+                  <option value="optionOne">low</option>
+                  <option value="optionTwo">moderate</option>
+                  <option value="optionThree">high</option>
+                </Field>
+              </div>
 
-              <div >
+              <div>
                 <label htmlFor="dependencies">Dependencies</label>
-                <Field 
+                <Field
                   type="text"
                   name="dependencies"
                   id="dependencies"
