@@ -96,21 +96,75 @@ button {
 }
 
 /*project card component*/
+@keyframes bg {
+  0% {
+    background-size: 0 3px,
+                     3px 0,
+                     0 3px,
+                     3px 0; 
+  }
+  25% {
+    background-size: 100% 3px,
+                     3px 0,
+                     0 3px,
+                     3px 0;
+  }
+  50% {
+    background-size: 100% 3px,
+                     3px 100%,
+                     0 3px,
+                     3px 0;
+  }
+  75% {
+    background-size: 100% 3px,
+                     3px 100%,
+                     100% 3px,
+                     3px 0;
+  }
+  100% {
+    background-size: 100% 3px,
+                     3px 100%,
+                     100% 3px,
+                     3px 100%;
+  }
+}
+
 .custom-card {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  height: 375px;
-  width: 930px !important;
+  height: 400px;
+  width: 35% !important;
   background-color: #ece0e0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  
   padding: 20px;
   margin-bottom: 20px;
-  
+  margin-left: 500px;
   box-sizing: border-box;
+
+  background-repeat: no-repeat;
+  background-image: linear-gradient(to right, #c9c9c9 100%,
+  #c9c9c9 100%),
+                    linear-gradient(to bottom, #c9c9c9 100%,
+  #c9c9c9 100%),
+                    linear-gradient(to right, #c9c9c9 100%,
+  #c9c9c9 100%),
+                    linear-gradient(to bottom, #c9c9c9 100%,
+  #c9c9c9 100%);
+  background-size: 100% 3px,
+                   3px 100%,
+                   100% 3px,
+                   3px 100%;
+  background-position: 0 0,
+                       100% 0,
+                       0 100%;
+  animation: bg 1.25s cubic-bezier(0.19, 1, 0.22, 1) 1;
+  animation-play-state: paused;
+}
+.custom-card:hover {
+  animation-play-state: running;
 }
 
 .project-form {
