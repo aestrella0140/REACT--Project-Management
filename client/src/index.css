@@ -1,5 +1,5 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
   
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
@@ -9,6 +9,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+body {
+  font-family: 'Rubik', sans-serif !important;
+}
+
 /*signup form*/
 .signup {
   display: flex;
@@ -137,7 +142,7 @@ button {
   flex-wrap: wrap;
   height: 400px;
   width: 35% !important;
-  background-color: #ece0e0;
+  background-color: #fffdfd;
   
   padding: 20px;
   margin-bottom: 20px;
@@ -163,6 +168,7 @@ button {
   animation: bg 1.25s cubic-bezier(0.19, 1, 0.22, 1) 1;
   animation-play-state: paused;
 }
+
 .custom-card:hover {
   animation-play-state: running;
 }

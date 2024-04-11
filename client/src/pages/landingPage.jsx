@@ -3,6 +3,7 @@ import React from 'react';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import goreLogo from '../assets/goreLogo.png';
+import heroBanner from '../assets/Hero_banner_xzkrSXH_max.jpg';
 
 const LandingPage = () => {
 
@@ -18,6 +19,7 @@ const LandingPage = () => {
             <h3 className='masthead-brand'>Continuous Improvement</h3>
 
             <main role='main' className='inner cover'>
+                <div className='hero' style={{ backgroundImage: `url(${heroBanner})`, height: '300px'}} ></div>
                 <h1 className='cover-heading'>Welcome to our Continuous Improvement Landing page!</h1>
 
                 <p className='lead'>W.L Gore's continuous improvement process is all about fostering team collaboration, encouraging innovative thinking,
