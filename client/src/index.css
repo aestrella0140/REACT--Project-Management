@@ -78,7 +78,8 @@ button {
   width: 100%;
   list-style: none;
   position: relative;
-  margin-top: 15px;
+  margin-top: 0px;
+  margin-bottom: 0;
   background-color: #656665;
 }
 
@@ -219,7 +220,7 @@ label {
   margin-left: 5px;
   margin-right: 5px;
 }
-
+/*landingpage*/
 
 
 @media (prefers-color-scheme: light) {
