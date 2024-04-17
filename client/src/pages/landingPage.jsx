@@ -33,15 +33,21 @@ const LandingPage = () => {
 
         {/*want 3 flip cards here */}
         <div className="d-flex justify-content-around">
-        {[1, 2, 3].map(i => (
-            <div className="card" style={{width: '18rem' }}>
-                <div className="card-body">
-                    <h5 className="card-title">Card title {i}</h5>
-                    <h6 className="card-subtitle mb-2 text-muted">Card Subtitle</h6>
-
+          {[1, 2, 3].map((i) => (
+            <div className="flip-card" style={{ width: "18rem" }}>
+              <div className="flip-card-inner">
+                <div className="flip-card-front">
+                  <h5 className="card-title">Card title {i}</h5>
+                  <h6 className="card-subtitle mb-2 text-muted">
+                    Card Subtitle
+                  </h6>
                 </div>
+                <div className="flip-card-back">
+                  <p>some text here stherasdlkfja;sdlkfjasdfa</p>
+                </div>
+              </div>
             </div>
-        ))}
+          ))}
         </div>
 
         <div className="d-flex flex-column justify-content-center align-items-center vh-100">
