@@ -76,7 +76,7 @@ const projectForm = () => {
         }}
       >
         {() => (
-          <Form className="project-form">
+          <Form className="project-form bg-light">
             <div className="top">
               <div className="card-1">
                 <label htmlFor="title">Title</label>
@@ -111,10 +111,10 @@ const projectForm = () => {
 
             <div className="middle">
               <div className="description-container">
-                <label className="desc-label" htmlFor="description">Problem Statement</label>
+                <label className="desc-label ml-4" htmlFor="description">Problem Statement</label>
                 <Field
                   as="textarea"
-                  className="description-field"
+                  className="description-field mr-5"
                   type="description"
                   name="description"
                   id="description"
@@ -122,7 +122,7 @@ const projectForm = () => {
                 />
               </div>
 
-              <div className="card-2">
+              <div className="card-2 mr-5">
                 <label htmlFor="Status">Status</label>
                 <Field
                   className="status-field"
@@ -135,13 +135,13 @@ const projectForm = () => {
             </div>
 
             <div className="bottom">
-              <div>
+              <div className="mr-3">
                 <label htmlFor="priority">Priority</label>
                 <Field as="select" name="priority" id="priority">
                   <option value="">select</option>
-                  <option value="optionOne">low</option>
-                  <option value="optionTwo">moderate</option>
-                  <option value="optionThree">high</option>
+                  <option className="low" value="optionOne">low</option>
+                  <option className="moderate" value="optionTwo">moderate</option>
+                  <option className="high" value="optionThree">high</option>
                 </Field>
               </div>
 

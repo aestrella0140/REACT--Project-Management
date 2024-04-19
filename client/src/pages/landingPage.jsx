@@ -15,7 +15,7 @@ const LandingPage = () => {
           className="hero mt-0"
           style={{ backgroundImage: `url(${heroBanner})`, height: "350px" }}
         ></div>
-        <h3 className="masthead-brand">Continuous Improvement</h3>
+        
         <div className="inner">
           <img className="img-fluid width-50" src={goreLogo} alt="Gore Logo" />
         </div>
@@ -31,7 +31,7 @@ const LandingPage = () => {
         </div>
         <p className="lead"></p>
 
-        {/*want 3 flip cards here */}
+        {/* need three core values for here*/}
         <div className="d-flex justify-content-around">
           {[1, 2, 3].map((i) => (
             <div className="flip-card" style={{ width: "18rem" }}>
@@ -39,7 +39,7 @@ const LandingPage = () => {
                 <div className="flip-card-front">
                   <h5 className="card-title">Card title {i}</h5>
                   <h6 className="card-subtitle mb-2 text-muted">
-                    Card Subtitle
+                    
                   </h6>
                 </div>
                 <div className="flip-card-back">
@@ -50,8 +50,9 @@ const LandingPage = () => {
           ))}
         </div>
 
-        <div className="d-flex flex-column justify-content-center align-items-center vh-100">
-          <p className="text-center  w-50 p-3">
+        <div className="d-flex flex-column justify-content-center align-items-center vh-100 bg-light mt-5">
+          <h3 className="mb-4">be apart of our team, Signup or login below!</h3>
+          <p className="text-center  w-50 p-3 mb-4">
             join a community of innovative thinkers dedicated to continuous
             improvement. You'll have access to our resources, be able to
             participate in discussions, share your ideas, and contribute to our
@@ -59,12 +60,12 @@ const LandingPage = () => {
           </p>
           <div className="d-flex justify-content-center m-2">
             <Link to="/Signup">
-              <button className="">Signup</button>
+              <button className="mb-2">Signup</button>
             </Link>
           </div>
           <div>
             <Link to="/Login">
-              <button>Login</button>
+              <button className="mb-2">Login</button>
             </Link>
           </div>
         </div>
