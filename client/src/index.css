@@ -198,7 +198,7 @@ button {
 
 .description-field {
   width: 250px;
-  height: 220px;
+  height: 205px;
   padding: 5px 0 190px 0;
   white-space: pre-wrap;
   overflow-y: auto;
@@ -275,6 +275,10 @@ transform: rotateY(180deg);
   background-color: black;
   color: white;
   transform: rotateY(180deg);
+}
+
+.cta {
+  padding-top: 100px;
 }
 
 @media (prefers-color-scheme: light) {

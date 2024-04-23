@@ -114,11 +114,12 @@ const projectForm = () => {
                 <label className="desc-label ml-4" htmlFor="description">Problem Statement</label>
                 <Field
                   as="textarea"
-                  className="description-field mr-5"
+                  className="description-field mr-4"
                   type="description"
                   name="description"
                   id="description"
                   placeholder="Enter description here"
+                  style={{resize: "none" }}
                 />
               </div>
 

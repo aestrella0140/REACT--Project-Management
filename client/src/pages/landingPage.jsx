@@ -32,9 +32,9 @@ const LandingPage = () => {
         <p className="lead"></p>
 
         {/* need three core values for here*/}
-        <div className="d-flex justify-content-around">
+        <div className="d-flex justify-content-around ">
           {[1, 2, 3].map((i) => (
-            <div className="flip-card" style={{ width: "18rem" }}>
+            <div className="flip-card " style={{ width: "18rem" }}>
               <div className="flip-card-inner">
                 <div className="flip-card-front">
                   <h5 className="card-title">Card title {i}</h5>
@@ -50,9 +50,9 @@ const LandingPage = () => {
           ))}
         </div>
 
-        <div className="d-flex flex-column justify-content-center align-items-center vh-100 bg-light mt-5">
+        <div className="cta d-flex flex-column justify-content-center align-items-center vh-100 bg-light mt-4 container-lg border mt-5 shadow" style={{ maxWidth: "60%", maxHeight: "400px"}}>
           <h3 className="mb-4">be apart of our team, Signup or login below!</h3>
-          <p className="text-center  w-50 p-3 mb-4">
+          <p className="text-center w-50 p-3 mb-4">
             join a community of innovative thinkers dedicated to continuous
             improvement. You'll have access to our resources, be able to
             participate in discussions, share your ideas, and contribute to our
