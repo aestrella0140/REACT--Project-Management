@@ -12,46 +12,53 @@ import {
 
 export default function Footer() {
     return(
-        <MDBFooter className="text-center">
-            <MDBContainer>
-                <section>
-                    <MDBBtn>
+        <MDBFooter className="text-center" color="white" bgColor="dark" style={{ marginTop: '100px'}}>
+            <MDBContainer className="p-4">
+                <section className="mb-4">
+                    <MDBBtn outline color="light" floating className="m-1" role="button">
                         <MDBIcon fab icon='facebook-f'/>
                     </MDBBtn>
 
-                    <MDBBtn>
+                    <MDBBtn outline color="light" floating className="m-1" role="button"> 
                         <MDBIcon fab icon="github"/>
                     </MDBBtn>
 
-                    <MDBBtn>
+                    <MDBBtn outline color="light" floating className="m-1" role="button">
                         <MDBIcon fab icon="linkedin-in"/>
                     </MDBBtn>
                 </section>
 
-                <section>
-                    <p>
+                <section className="mb-4">
+                    <p >
                         short paragraph here
                     </p>
                 </section>
 
-                <section>
+                <section className="">
                     <MDBRow>
-                        <MDBCol>
-                            <h5>Links</h5>
+                        <MDBCol lg='3' md='6' className="mb-4 mb-md-0">
+                            <h5 className="text-uppercase">Links</h5>
 
-                            <ul>
+                            <ul className="list-unstyled mb-0">
                                 <li>
-                                    <a href=""></a>
+                                    <a href="" className="text-white">
+                                        link
+                                    </a>
                                 </li>
                                 <li>
-                                    <a href=""></a>
+                                    <a href="" className="text-white">
+                                        link 2
+                                    </a>
                                 </li>
                                 <li>
-                                    <a href=""></a>
+                                    <a href="" className="text-white">
+                                        Link 3
+                                    </a>
                                 </li>
                                 <li>
-                                    <a href="
-                                    "></a>
+                                    <a href="" className="text-white">
+                                        Link 4
+                                    </a>
                                 </li>
                             </ul>
                         </MDBCol>
@@ -59,9 +66,9 @@ export default function Footer() {
                 </section>
             </MDBContainer>
 
-            <div>
+            <div className="text-center p-3" style={{ backgroundColor: 'rgba(0, 0, 0, o.2)' }}>
                 @ 2024 Copyright:
-                <a href="https://github.com/aestrella0140">
+                <a className="text-white" href="https://github.com/aestrella0140">
                 aestrella0140
                 </a>
             </div>
