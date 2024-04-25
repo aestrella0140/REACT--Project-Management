@@ -33,7 +33,7 @@ export default function Footer() {
                         short paragraph here
                     </p>
                 </section>
-
+            {/* want links to personal about page....sources for development maybe and a short paragraph page about gore.... and new development ideas and issue report page */ }
                 <section className="">
                     <MDBRow>
                         <MDBCol lg='3' md='6' className="mb-4 mb-md-0">
@@ -66,9 +66,9 @@ export default function Footer() {
                 </section>
             </MDBContainer>
 
-            <div className="text-center p-3" style={{ backgroundColor: 'rgba(0, 0, 0, o.2)' }}>
+            <div  className="text-center p-3" style={{ backgroundColor: 'rgba(0, 0, 0, o.2)' }}>
                 @ 2024 Copyright:
-                <a className="text-white" href="https://github.com/aestrella0140">
+                <a className="text-white p-1" href="https://github.com/aestrella0140">
                 aestrella0140
                 </a>
             </div>

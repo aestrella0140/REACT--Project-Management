@@ -34,7 +34,7 @@ const LandingPage = () => {
         {/* need three core values for here*/}
         <div className="d-flex justify-content-around ">
           {[1, 2, 3].map((i) => (
-            <div className="flip-card " style={{ width: "18rem" }}>
+            <div key={i} className="flip-card " style={{ width: "18rem" }}>
               <div className="flip-card-inner">
                 <div className="flip-card-front">
                   <h5 className="card-title">Card title {i}</h5>
