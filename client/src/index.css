@@ -281,13 +281,15 @@ transform: rotateY(180deg);
   padding-top: 100px;
 }
 
+.my-custom-btn:focus,
+.my-custom-btn:active {
+    transform: scale(1);
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
   }
   
 }
