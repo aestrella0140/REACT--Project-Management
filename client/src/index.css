@@ -281,10 +281,11 @@ transform: rotateY(180deg);
   padding-top: 100px;
 }
 
-.my-custom-btn:focus,
-.my-custom-btn:active {
-    transform: scale(1);
+
+.ripple-wave {
+  opacity: 0 !important;
 }
+
 
 @media (prefers-color-scheme: light) {
   :root {

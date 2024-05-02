@@ -15,19 +15,19 @@ import {
 export default function Footer() {
     return(
         <MDBFooter className="text-center" color="white" bgColor="dark" style={{ marginTop: '100px'}}>
-            <MDBContainer className="p-4">
-                <section className="mb-4">
-                    <MDBBtn outline color="light" floating className="m-1 my-custom-btn" href="#!" role="button">
+            <MDBContainer className='p-4'>
+                <section className="mb-4" >
+                    <a outline color="light" className='m-3  btn-outline-light' href="#!" role='button' >
                         <MDBIcon fab icon="facebook-f"/>
-                    </MDBBtn>
+                    </a>
 
-                    <MDBBtn outline color="light" floating className="m-1 my-custom-btn" href="#!" role="button"> 
+                    <a outline color="light"className="m-3  btn-outline-light" href="#!" role="button"> 
                         <MDBIcon fab icon="github"/>
-                    </MDBBtn>
+                    </a>
 
-                    <MDBBtn outline color="light" floating className="m-1 my-custom-btn" href="#!" role="button">
-                        <MDBIcon fab icon="linkedin-in"/>
-                    </MDBBtn>
+                    <a outline color="light" className="m-2 btn-outline-light" href="#!" role="button"> 
+                        <MDBIcon fab icon="linkedin-in my-custom-icon"/>
+                    </a>
                 </section>
 
                 <section className="mb-4">
@@ -44,7 +44,7 @@ export default function Footer() {
                             <ul className="list-unstyled mb-0">
                                 <li>
                                     <a href="" className="text-white">
-                                        link
+                                        asdf
                                     </a>
                                 </li>
                                 <li>
