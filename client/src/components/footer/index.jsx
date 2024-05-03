@@ -16,16 +16,16 @@ export default function Footer() {
     return(
         <MDBFooter className="text-center" color="white" bgColor="dark" style={{ marginTop: '100px'}}>
             <MDBContainer className='p-4'>
-                <section className="mb-4" >
-                    <a outline color="light" className='m-3  btn-outline-light' href="#!" role='button' >
+                <section className="mb-4 " >
+                    <a color="light" className='m-3 border btn-outline-light' href="#!" role='button' >
                         <MDBIcon fab icon="facebook-f"/>
                     </a>
 
-                    <a outline color="light"className="m-3  btn-outline-light" href="#!" role="button"> 
+                    <a color="light" className="m-2 border btn-outline-light" href="#!" role="button" > 
                         <MDBIcon fab icon="github"/>
                     </a>
 
-                    <a outline color="light" className="m-2 btn-outline-light" href="#!" role="button"> 
+                    <a color="light" className="m-3 border btn-outline-light" href="https://www.linkedin.com/in/adrian-estrella-7a91b42a2/" role="button" > 
                         <MDBIcon fab icon="linkedin-in my-custom-icon"/>
                     </a>
                 </section>
