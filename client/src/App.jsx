@@ -33,7 +33,7 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <div>
+      <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh'}}>
         <StoreProvider>
         <Nav />
         <Outlet />

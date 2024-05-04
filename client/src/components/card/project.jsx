@@ -92,9 +92,10 @@ const projectForm = () => {
                 <label htmlFor="category">Category</label>
                 <Field as="select" name="category" id="category">
                   <option value="">select</option>
-                  <option value="option1">AC</option>
-                  <option value="option2">SWaGA</option>
-                  <option value="option3">Viatorr</option>
+                  <option value="option1">ergo</option>
+                  <option value="option2">people</option>
+                  <option value="option3">delivery</option>
+                  <option value="option4">quality</option>
                 </Field>
               </div>
 
@@ -124,14 +125,16 @@ const projectForm = () => {
               </div>
 
               <div className="card-2 mr-5">
-                <label htmlFor="Status">Status</label>
-                <Field
-                  className="status-field"
-                  type="text"
-                  name="Status"
-                  id="Status"
-                  placeholder="Enter Status here"
-                />
+                <label htmlFor="Status">Rankings</label>
+                <Field as="select" name="Status" id="Status" className="status-field" >
+                <option value="">select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+
+                </Field>
               </div>
             </div>
 
