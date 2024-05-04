@@ -21,7 +21,7 @@ export default function Footer() {
                         <MDBIcon fab icon="facebook-f"/>
                     </a>
 
-                    <a color="light" className="m-2 border btn-outline-light" href="#!" role="button" > 
+                    <a color="light" className="m-2 border btn-outline-light" href="https://github.com/aestrella0140" role="button" > 
                         <MDBIcon fab icon="github"/>
                     </a>
 
@@ -38,6 +38,60 @@ export default function Footer() {
             {/* want links to personal about page....sources for development maybe and a short paragraph page about gore.... and new development ideas and issue report page */ }
                 <section className="">
                     <MDBRow>
+                        <MDBCol lg='3' md='6' className="mb-4 mb-md-0">
+                            <h5 className="text-uppercase">Links</h5>
+                            {/*about page resources and gore page link*/}
+                            <ul className="list-unstyled mb-0">
+                                <li>
+                                    <a href="" className="text-white">
+                                        asdf
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" className="text-white">
+                                        link 2
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" className="text-white">
+                                        Link 3
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" className="text-white">
+                                        Link 4
+                                    </a>
+                                </li>
+                            </ul>
+                        </MDBCol>
+                            {/*for contact section*/}
+                        <MDBCol lg='3' md='6' className="mb-4 mb-md-0">
+                            <h5 className="text-uppercase">Links</h5>
+
+                            <ul className="list-unstyled mb-0">
+                                <li>
+                                    <a href="" className="text-white">
+                                        asdf
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" className="text-white">
+                                        link 2
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" className="text-white">
+                                        Link 3
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" className="text-white">
+                                        Link 4
+                                    </a>
+                                </li>
+                            </ul>
+                        </MDBCol>
+
                         <MDBCol lg='3' md='6' className="mb-4 mb-md-0">
                             <h5 className="text-uppercase">Links</h5>
 
