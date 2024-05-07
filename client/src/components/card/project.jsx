@@ -7,39 +7,7 @@ import { CREATE_PROJECT } from "../../utils/mutations";
 const projectForm = () => {
   const [createProject, { loading, error }] = useMutation(CREATE_PROJECT);
 
-  // const formik = useFormik({
-  //   initialValues: {
-  //     title: "",
-  //     description: "",
-  //     Status: "",
-  //     priority: "",
-  //     Users: "",
-  //     dependencies: "",
-  //     category: "",
-  //   },
-  //   onSubmit: (values) => {
-  //     createProject({ variables: values })
-  //       .then((response) => {
-  //         const { data } = response;
-  //         const {
-  //           title,
-  //           description,
-  //           Status,
-  //           priority,
-  //           Users,
-  //           dependencies,
-  //           category,
-  //         } = values;
-  //       })
-  //       .then(() => {
-  //         // going to use toastify here instead of alert
-  //         alert("Project successfully created!");
-  //       })
-  //       .catch((error) => {
-  //         console.log(error);
-  //       });
-  //   },
-  // });
+
   return (
     <div className="custom-card  col-12">
       <Formik
