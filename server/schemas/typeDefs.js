@@ -20,7 +20,7 @@ type Project {
 
 type Category {
     _id: ID
-    team: String
+    section: String
 }
 
 type Auth {
@@ -33,7 +33,7 @@ type Query {
     user(userId: ID!): User
     me: User
     categories: [Category]
-    projects(category: ID, team: String): [Project]
+    projects(category: ID, section: String): [Project]
     project(_id: ID!): Project
 }
 
@@ -42,8 +42,8 @@ type Mutation {
     updateUser(firstName: String, lastName: String, email: String, password: String): User
     login(email: String!, password: String!): Auth
     removeUser: User
-    createProject(title: String!, description: String!, Status: String, priority: String!, Users: [ID]!, dependencies: String!): Project
-    updateProject(title: String!, description: String!, Status: String, priority: String!, Users: [ID]!, dependencies: String!): Project
+    createProject(title: String!, description: String!, Status: String, priority: String!, Users: [ID]!, dependencies: String!, category: String!): Project
+    updateProject(title: String!, description: String!, Status: String, priority: String!, Users: [ID]!, dependencies: String!, category: String!): Project
     removeProject: Project
 }
 `;

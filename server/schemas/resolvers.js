@@ -23,16 +23,16 @@ const resolvers = {
             return await Category.find();
         },
 
-        projects: async (parent, { category, team }) => {
+        projects: async (parent, { category, section }) => {
             const params = {};
 
             if (category) {
                 params.category = category;
             }
 
-            if (team) {
-                params.name = {
-                    $regex: team,
+            if (section) {
+                params.section = {
+                    $regex: section,
                 };
             }
 
@@ -75,8 +75,8 @@ const resolvers = {
             throw AuthenticationError;
         },
 
-        createProject: async (parent, { title, description, Status, priority, Users, dependencies }) => {
-            const project = await Project.create({ title, description, Status, priority, Users, dependencies });
+        createProject: async (parent, { title, description, Status, priority, Users, dependencies, category }) => {
+            const project = await Project.create({ title, description, Status, priority, Users, dependencies, category });
             
 
             return { project };

@@ -47,6 +47,7 @@ mutation createProject($title: String!, $description: String!, $priority: String
     dependencies
     category {
       _id
+      section
     }
   }
 }
