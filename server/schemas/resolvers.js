@@ -23,16 +23,16 @@ const resolvers = {
             return await Category.find();
         },
 
-        projects: async (parent, { category, section }) => {
+        projects: async (parent, { category, type }) => {
             const params = {};
 
             if (category) {
                 params.category = category;
             }
 
-            if (section) {
-                params.section = {
-                    $regex: section,
+            if (type) {
+                params.type = {
+                    $regex: type,
                 };
             }
 
@@ -78,8 +78,9 @@ const resolvers = {
         createProject: async (parent, { title, description, Status, priority, Users, dependencies, category }) => {
             const project = await Project.create({ title, description, Status, priority, Users, dependencies, category });
             
+            await project.populate('Users category').execPopulate();
 
-            return { project };
+            return project;
         },
 
         removeProject: async (parent, args, context) => {

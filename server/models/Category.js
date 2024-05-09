@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const categorySchema = new Schema({
-    section: {
+    type: {
         type: String,
         required: true, 
         trim: true

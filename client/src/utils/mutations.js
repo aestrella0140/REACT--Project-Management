@@ -47,11 +47,30 @@ mutation createProject($title: String!, $description: String!, $priority: String
     dependencies
     category {
       _id
-      section
+      type
     }
   }
 }
 `;
+
+// mutation CreateProject($title: String!, $description: String!, $priority: String!, $users: [ID]!, $dependencies: String!, $category: String!, $status: String) {
+//   createProject(title: $title, description: $description, priority: $priority, Users: $users, dependencies: $dependencies, category: $category, Status: $status) {
+//     _id
+//     Users {
+//       firstName
+//       lastName
+//     }
+//     Status
+//     category {
+//       _id
+//       type
+//     }
+//     dependencies
+//     description
+//     priority
+//     title
+//   }
+// }
 
 export const REMOVE_PROJECT = gql`
 mutation removeProject {

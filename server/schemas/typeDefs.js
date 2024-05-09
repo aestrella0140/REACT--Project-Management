@@ -20,7 +20,7 @@ type Project {
 
 type Category {
     _id: ID
-    section: String
+    type: String
 }
 
 type Auth {
@@ -33,7 +33,7 @@ type Query {
     user(userId: ID!): User
     me: User
     categories: [Category]
-    projects(category: ID, section: String): [Project]
+    projects(category: ID, type: String): [Project]
     project(_id: ID!): Project
 }
 
