@@ -50,8 +50,8 @@ const dashboard = () => {
                 <div className="dashboard">
                     <CategoryMenu onChange ={handleCategoryChange} />
                     <button onClick={handleShowProject}>Add</button>
-                    {filteredProjects.map(project => (
-                        <div key={project.id}>
+                    {filteredProjects.map((project, index) => (
+                        <div key={index}>
                             <h3>{project.title}</h3>
                         </div>
                     ))}

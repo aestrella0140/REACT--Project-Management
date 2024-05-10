@@ -15,7 +15,7 @@ const ProjectList = ({ projects, isLoggedInUser = false }) => {
     const handleRemoveProject = async (project) => {
         try {
             const { data } = await removeProject({
-                variables: { project },
+                variables: { project},
             });
         } catch (err) {
             console.log(err);
@@ -31,7 +31,7 @@ const ProjectList = ({ projects, isLoggedInUser = false }) => {
             <div>
                 {projects &&
                 projects.map((project) => (
-                    <div key={project}>
+                    <div key={project.title}>
 
                     </div>
                 ))

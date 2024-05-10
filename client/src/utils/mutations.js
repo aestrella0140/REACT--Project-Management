@@ -36,41 +36,44 @@ mutation removeUser {
 }
 `;
 
-export const CREATE_PROJECT = gql`
-mutation createProject($title: String!, $description: String!, $priority: String!, $users: [ID]!, $dependencies: String!, $status: String, $category: ID!) {
-  createProject(title: $title, description: $description, priority: $priority, Users: $users, dependencies: $dependencies, Status: $status, category: $category) {
-    _id
-    title
-    description
-    Status
-    priority
-    dependencies
-    category {
-      _id
-      type
-    }
-  }
-}
-`;
-
-// mutation CreateProject($title: String!, $description: String!, $priority: String!, $users: [ID]!, $dependencies: String!, $category: String!, $status: String) {
-//   createProject(title: $title, description: $description, priority: $priority, Users: $users, dependencies: $dependencies, category: $category, Status: $status) {
+// export const CREATE_PROJECT = gql`
+// mutation createProject($title: String!, $description: String!, $priority: String!, $users: [ID]!, $dependencies: String!, $status: String, $category: ID!) {
+//   createProject(title: $title, description: $description, priority: $priority, Users: $users, dependencies: $dependencies, Status: $status, category: $category) {
 //     _id
-//     Users {
-//       firstName
-//       lastName
-//     }
+//     title
+//     description
 //     Status
+//     priority
+//     dependencies
 //     category {
 //       _id
 //       type
 //     }
-//     dependencies
-//     description
-//     priority
-//     title
 //   }
 // }
+// `;
+
+
+export const CREATE_PROJECT = gql`
+mutation CreateProject($title: String!, $description: String!, $priority: String!, $users: [ID]!, $dependencies: String!, $category: String!, $status: String) {
+  createProject(title: $title, description: $description, priority: $priority, Users: $users, dependencies: $dependencies, category: $category, Status: $status) {
+    _id
+    Users {
+      firstName
+      lastName
+    }
+    Status
+    category {
+      _id
+      type
+    }
+    dependencies
+    description
+    priority
+    title
+  }
+}
+`;
 
 export const REMOVE_PROJECT = gql`
 mutation removeProject {
