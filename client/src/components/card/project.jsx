@@ -16,11 +16,14 @@ const projectForm = () => {
           description: "",
           Status: "",
           priority: "",
-          Users: "",
+          users: "",
           dependencies: "",
           category: "",
         }}
         onSubmit={(values) => {
+          if (typeof values.users === 'string') {
+            values.users = values.users.split(',').map(id => id.trim());
+          }
           createProject({ variables: values })
             .then((response) => {
               const { data } = response;
@@ -29,7 +32,7 @@ const projectForm = () => {
                 description,
                 Status,
                 priority,
-                Users,
+                users,
                 dependencies,
                 category,
               } = values;
@@ -68,12 +71,13 @@ const projectForm = () => {
               </div>
 
               <div className="card-1">
-                <label htmlFor="Users">Users</label>
+                <label htmlFor="users">Users</label>
                 <Field
                   type="text"
-                  name="Users"
-                  id="Users"
+                  name="users"
+                  id="users"
                   placeholder="Add Users to project"
+                  onSubmit={value => objectId(value)}
                 />
               </div>
             </div>

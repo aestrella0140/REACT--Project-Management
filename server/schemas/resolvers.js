@@ -76,6 +76,7 @@ const resolvers = {
         },
 
         createProject: async (parent, { title, description, Status, priority, Users, dependencies, category }) => {
+            const users = await User.find({ $or: [{ firstName: { $in: Users } }, {lastName: { $in: Users } }] })
             const project = await Project.create({ title, description, Status, priority, Users, dependencies, category });
             
             await project.populate('Users category').execPopulate();
