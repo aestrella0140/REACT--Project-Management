@@ -13,7 +13,7 @@ type Project {
     description: String
     Status: String
     priority: String
-    Users: [User]
+    Users: [ID]
     dependencies: String
     category: Category
 }
@@ -42,8 +42,8 @@ type Mutation {
     updateUser(firstName: String, lastName: String, email: String, password: String): User
     login(email: String!, password: String!): Auth
     removeUser: User
-    createProject(title: String!, description: String!, Status: String, priority: String!, Users: [ID]!, dependencies: String!, category: String!): Project
-    updateProject(title: String!, description: String!, Status: String, priority: String!, Users: [ID]!, dependencies: String!, category: String!): Project
+    createProject(title: String!, description: String!, Status: String, priority: String!, Users: [ID]!, dependencies: String!, category: ID!): Project
+    updateProject(title: String!, description: String!, Status: String, priority: String!, Users: [ID]!, dependencies: String!, category: ID!): Project
     removeProject: Project
 }
 `;

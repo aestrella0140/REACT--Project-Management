@@ -64,7 +64,7 @@ query projectsCategoryId($projectId: ID!) {
   project(projectId: $projectId) {
     category {
       _id
-      section
+      type
     }
   }
 }
@@ -74,7 +74,7 @@ export const QUERY_CATEGORIES = gql`
 {
   categories {
     _id
-    section
+    type
   }
 }
 `;
