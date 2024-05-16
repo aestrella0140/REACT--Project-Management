@@ -55,7 +55,7 @@ mutation removeUser {
 
 
 export const CREATE_PROJECT = gql`
-mutation CreateProject($title: String!, $description: String!, $priority: String!, $users: [ID]!, $dependencies: String!, $category: String!, $status: String) {
+mutation CreateProject($title: String!, $description: String!, $priority: String!, $users: [UserInput]!, $dependencies: String!, $category: String!, $status: String) {
   createProject(title: $title, description: $description, priority: $priority, Users: $users, dependencies: $dependencies, category: $category, Status: $status) {
     _id
     Users {

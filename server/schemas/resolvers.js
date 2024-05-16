@@ -76,12 +76,18 @@ const resolvers = {
         },
 
         createProject: async (parent, { title, description, Status, priority, Users, dependencies, category }) => {
-            const users = await User.find({ $or: [{ firstName: { $in: Users } }, {lastName: { $in: Users } }] })
-            const project = await Project.create({ title, description, Status, priority, Users, dependencies, category });
-            
-            await project.populate('Users category').execPopulate();
 
-            return project;
+            const users = await User.find({ $or: Users.map(user => ({ firstName: user.firstName, lastName: user.lastName })) });
+
+            if (users.length !== Users.length) {
+                throw new Error('One or more users names are invalid');
+            }
+
+            const project = await Project.create({ title, description, Status, priority, Users: users.map(user => user._id), dependencies, category });
+            
+            const populatedProject= await project.populate('Users category').execPopulate();
+
+            return populatedProject;
         },
 
         removeProject: async (parent, args, context) => {
