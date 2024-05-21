@@ -42,14 +42,9 @@ type Mutation {
     updateUser(firstName: String, lastName: String, email: String, password: String): User
     login(email: String!, password: String!): Auth
     removeUser(userId: ID!): User
-    createProject(title: String!, description: String!, Status: String, priority: String!, Users: [UserInput]!, dependencies: String, category: ID!): Project
-    updateProject(title: String!, description: String!, Status: String, priority: String!, Users: [UserInput]!, dependencies: String, category: ID!): Project
+    createProject(title: String!, description: String!, Status: String, priority: String!, Users: [String]!, dependencies: String, category: ID!): Project
+    updateProject(projectId: ID!, title: String!, description: String!, Status: String, priority: String!, Users: [String]!, dependencies: String, category: ID!): Project
     removeProject(projectId: ID!): Project
-}
-
-input UserInput {
-    firstName: String!
-    lastName: String
 }
 `;
 

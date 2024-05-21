@@ -16,26 +16,34 @@ const projectForm = () => {
           description: "",
           Status: "",
           priority: "",
-          users: "",
+          Users: [],
           dependencies: "",
           category: "",
         }}
         onSubmit={(values) => {
-          if (typeof values.users === 'string') {
-            values.users = values.users.split(',').map(id => id.trim());
-          }
-          createProject({ variables: values })
+          const { Users: users, category, ...otherValues } = values;
+          const convertedValues = {
+            ...otherValues,
+            Users: users.split(',').map(user => user.trim()),
+            category: category,
+          }; 
+
+          console.log('converted values:', convertedValues);
+
+          createProject({ variables: convertedValues })
+         
             .then((response) => {
+              console.log('mutation variables:', response.variables);
               const { data } = response;
               const {
                 title,
                 description,
                 Status,
                 priority,
-                users,
+                Users,
                 dependencies,
                 category,
-              } = values;
+              } =  data.createProject;
             })
             .then(() => {
               // going to use toastify here instead of alert
@@ -63,10 +71,10 @@ const projectForm = () => {
                 <label htmlFor="category">Category</label>
                 <Field as="select" name="category" id="category">
                   <option value="">select</option>
-                  <option value="option1">ergo</option>
-                  <option value="option2">people</option>
-                  <option value="option3">delivery</option>
-                  <option value="option4">quality</option>
+                  <option value="idOfCategory1">ergo</option>
+                  <option value="idOfCategory2">people</option>
+                  <option value="idOfCategory3">delivery</option>
+                  <option value="idofCategory4">quality</option>
                 </Field>
               </div>
 
@@ -74,10 +82,9 @@ const projectForm = () => {
                 <label htmlFor="users">Users</label>
                 <Field
                   type="text"
-                  name="users"
-                  id="users"
+                  name="Users"
+                  id="Users"
                   placeholder="Add Users to project"
-                  onSubmit={value => objectId(value)}
                 />
               </div>
             </div>
@@ -105,7 +112,6 @@ const projectForm = () => {
                 <option value="3">3</option>
                 <option value="4">4</option>
                 <option value="5">5</option>
-
                 </Field>
               </div>
             </div>
