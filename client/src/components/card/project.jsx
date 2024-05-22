@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useFormik, Formik, Form, Field } from "formik";
 
 import { useMutation } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import { CREATE_PROJECT } from "../../utils/mutations";
+import { QUERY_CATEGORIES } from "../../utils/queries";
 
 const projectForm = () => {
-  const [createProject, { loading, error }] = useMutation(CREATE_PROJECT);
+  const [createProject, { loading: mutationLoading, error: mutationError }] = useMutation(CREATE_PROJECT);
 
+  const { loading: queryLoading, error: queryError, data } = useQuery(QUERY_CATEGORIES);
+
+  useEffect(() => {
+    if (!loading && !error && data) {
+      setCategories(data.categories);
+    }
+  }, [loading, error, data]);
 
   return (
     <div className="custom-card  col-12">
@@ -70,10 +79,11 @@ const projectForm = () => {
                 <label htmlFor="category">Category</label>
                 <Field as="select" name="category" id="category">
                   <option value="">select</option>
-                  <option value="idOfCategory1">ergo</option>
-                  <option value="idOfCategory2">people</option>
-                  <option value="idOfCategory3">delivery</option>
-                  <option value="idofCategory4">quality</option>
+                  {categories.map(category => (
+                    <option key={category._id} value={category._id}>
+                      {category.name}
+                    </option>
+                  ))}
                 </Field>
               </div>
 
