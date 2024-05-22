@@ -55,8 +55,8 @@ mutation removeUser {
 
 
 export const CREATE_PROJECT = gql`
-mutation createProject($title: String!, $description: String!, $priority: String!, $users: [String]!, $dependencies: String!, $category: ID!, $status: String) {
-  createProject(title: $title, description: $description, priority: $priority, Users: $users, dependencies: $dependencies, category: $category, Status: $status) {
+mutation createProject($title: String!, $description: String!, $priority: String!, $Users: String!, $dependencies: String!, $category: ID!, $status: String) {
+  createProject(title: $title, description: $description, priority: $priority, Users: $Users, dependencies: $dependencies, category: $category, Status: $status) {
     _id
     Users 
     Status
@@ -76,28 +76,20 @@ export const REMOVE_PROJECT = gql`
 mutation removeProject {
   removeProject {
     _id
-    Users {
-      _id
-      firstName
-      lastName
-    }
+    Users 
   }
 }
 `;
 
 export const UPDATE_PROJECT = gql`
-mutation updateProject($title: String!, $description: String!, $priority: String!, $users: [ID]!, $dependencies: String!, $status: String) {
+mutation updateProject($title: String!, $description: String!, $priority: String!, $users: String!, $dependencies: String!, $status: String) {
   updateProject(title: $title, description: $description, priority: $priority, Users: $users, dependencies: $dependencies, Status: $status) {
     _id
     title
     description
     Status
     priority
-    Users {
-      _id
-      firstName
-      lastName
-    }
+    Users
   }
 }
 `;

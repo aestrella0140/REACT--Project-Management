@@ -16,15 +16,14 @@ const projectForm = () => {
           description: "",
           Status: "",
           priority: "",
-          Users: [],
+          Users: "",
           dependencies: "",
           category: "",
         }}
         onSubmit={(values) => {
-          const { Users: users, category, ...otherValues } = values;
+          const {category, ...otherValues } = values;
           const convertedValues = {
             ...otherValues,
-            Users: users.split(',').map(user => user.trim()),
             category: category,
           }; 
 

@@ -20,10 +20,10 @@ const ProjectSchema = new Schema({
         type: String,
         required: true,
     },
-    Users: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
-    }],
+    Users: {
+        type: String,
+        required: true,
+    },
     dependencies: {
         type: String,
         required: true,

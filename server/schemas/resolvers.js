@@ -79,24 +79,18 @@ const resolvers = {
       parent,
       { title, description, Status, priority, Users, dependencies, category }
     ) => {
-      const userIDs = await Promise.all(
-        Users.map(async (username) => {
-          const user = await User.findOne({ username });
-          return user ? user._id : null;
-        })
-      );
 
       const project = await Project.create({
         title,
         description,
         Status,
         priority,
-        Users: userIDs,
+        Users,
         dependencies,
         category,
       });
 
-      await project.populate("Users category").execPopulate();
+      // await project.populate("Users category").execPopulate();
 
       return { project };
     },
@@ -112,12 +106,7 @@ const resolvers = {
       parent,
       {projectId, title, description, Status, priority, Users, dependencies, category }
     ) => {
-      const userIDs = await Promise.all(
-        Users.map(async (username) => {
-          const user = await User.findOne({ username });
-          return user ? user._id : null;
-        })
-      );
+      
 
       const project = await Project.findOneAndUpdate(
         { _id: projectId },
@@ -126,7 +115,7 @@ const resolvers = {
           description,
           Status,
           priority,
-          Users: userIDs,
+          Users,
           dependencies,
           category,
         },
@@ -137,7 +126,6 @@ const resolvers = {
 
       return { project };
 
-      throw AuthenticationError;
     },
   },
 };
