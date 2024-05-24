@@ -20,7 +20,7 @@ const resolvers = {
     },
 
     categories: async () => {
-      return await Category.find();
+      return await Category.find({});
     },
 
     projects: async (parent, { category, type }) => {
@@ -127,6 +127,7 @@ const resolvers = {
       return { project };
 
     },
+    // createCategory here
   },
 };
 

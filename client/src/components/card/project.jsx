@@ -9,7 +9,9 @@ import { QUERY_CATEGORIES } from "../../utils/queries";
 const projectForm = () => {
   const [createProject, { loading: mutationLoading, error: mutationError }] = useMutation(CREATE_PROJECT);
 
-  const { loading: queryLoading, error: queryError, data } = useQuery(QUERY_CATEGORIES);
+  const { loading, error, data } = useQuery(QUERY_CATEGORIES);
+
+  const [categories, setCategories ] = useState([]);
 
   useEffect(() => {
     if (!loading && !error && data) {
@@ -93,7 +95,7 @@ const projectForm = () => {
                   type="text"
                   name="Users"
                   id="Users"
-                  placeholder="Add Users to project"
+                  placeholder="Add creator to project"
                 />
               </div>
             </div>
