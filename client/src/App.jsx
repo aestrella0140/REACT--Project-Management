@@ -1,4 +1,10 @@
 import { Outlet } from "react-router-dom";
+import * as React from 'react';
+
+import { Admin, Resource, ListGuesser } from 'react-admin';
+import buildGraphQlProvider from 'ra-data-graphql-simple';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import {
   ApolloClient,
   InMemoryCache,
