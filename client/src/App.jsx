@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import * as React from 'react';
+import { useState, useEffect } from "react";
 
 import { Admin, Resource, ListGuesser } from 'react-admin';
 import buildGraphQlProvider from 'ra-data-graphql-simple';
@@ -37,8 +38,19 @@ const client = new ApolloClient({
 });
 
 function App() {
+
+  const [dataProvider, setDataProvider] = useState(null);
+
+  useEffect(() => {
+    buildGraphQlProvider({ client })
+    .then(dataProviderGraphql => setDataProvider(() => dataProviderGraphql))
+  }, []);
+
+  if(!dataProvider) return <div>Loading</div>;
+
   return (
     <ApolloProvider client={client}>
+      <Admin dataProvider={dataProvider}>
       <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh'}}>
         <StoreProvider>
         <Nav />
@@ -46,6 +58,7 @@ function App() {
         <Footer />
         </StoreProvider >
       </div>
+      </Admin>
     </ApolloProvider>
   );
 }
