@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { Admin, Resource, ListGuesser } from 'react-admin';
 import buildGraphQlProvider from 'ra-data-graphql-simple';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { authProvider } from './utils/auth';
 
 import {
   ApolloClient,
@@ -50,7 +51,10 @@ function App() {
 
   return (
     <ApolloProvider client={client}>
-      <Admin dataProvider={dataProvider}>
+      <Admin
+       dataProvider={dataProvider}
+       authProvider={authProvider}
+       >
       <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh'}}>
         <StoreProvider>
         <Nav />
