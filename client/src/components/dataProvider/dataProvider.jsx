@@ -14,6 +14,28 @@ mutation CreateCategory($type: String!) {
 }
 `;
 
+const UPDATE_CATEGORY = gql`
+mutation CreateCategory($type: String!) {
+    createCategory(type: $type) {
+        id
+        type
+    }
+}
+`;
+
+export const UPDATE_PROJECT = gql`
+mutation updateProject($title: String!, $description: String!, $priority: String!, $users: String!, $dependencies: String!, $status: String) {
+  updateProject(title: $title, description: $description, priority: $priority, Users: $users, dependencies: $dependencies, Status: $status) {
+    _id
+    title
+    description
+    Status
+    priority
+    Users
+  }
+}
+`;
+
 const dataProvider = {
 
 };

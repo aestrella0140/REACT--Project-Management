@@ -138,6 +138,21 @@ const resolvers = {
 
       return category;
     },
+
+    updateCategory: async (parent, {categoryId, type}, context) => {
+
+      if(!context.user.isAdmin) {
+        throw new Error('You are not authorized to preform this action');
+      }
+
+      const category = await Category.findOneAndUpdate(
+        { _id: categoryId },
+        {type}, 
+        { new: true }
+      ); 
+
+      return category;
+    }
   },
 };
 
