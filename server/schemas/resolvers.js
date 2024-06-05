@@ -127,7 +127,17 @@ const resolvers = {
       return { project };
 
     },
-    // createCategory here
+    createCategory: async (parent, { type }, context) => {
+
+      if (!context.user.isAdmin) {
+        throw new Error('You are not authorized to preform this action');
+      }
+
+      const category = new Category({ type });
+      await category.save();
+
+      return category;
+    },
   },
 };
 

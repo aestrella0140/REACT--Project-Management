@@ -5,7 +5,8 @@ import { useState, useEffect } from "react";
 import { Admin, Resource, ListGuesser } from 'react-admin';
 import buildGraphQlProvider from 'ra-data-graphql-simple';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { authProvider } from './utils/auth';
+// import { authProvider } from './utils/auth';
+import dataProvider from "./components/dataProvider/dataProvider";
 
 import {
   ApolloClient,
@@ -40,20 +41,11 @@ const client = new ApolloClient({
 
 function App() {
 
-  const [dataProvider, setDataProvider] = useState(null);
-
-  useEffect(() => {
-    buildGraphQlProvider({ client })
-    .then(dataProviderGraphql => setDataProvider(() => dataProviderGraphql))
-  }, []);
-
-  if(!dataProvider) return <div>Loading</div>;
-
   return (
     <ApolloProvider client={client}>
       <Admin
        dataProvider={dataProvider}
-       authProvider={authProvider}
+      //  authProvider={authProvider}
        >
       <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh'}}>
         <StoreProvider>
