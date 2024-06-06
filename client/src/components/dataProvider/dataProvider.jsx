@@ -4,6 +4,16 @@ const client = new ApolloClient({
     uri: 'http://my.graphql.api',
     cache: new InMemoryCache()
 });
+// mutations
+const REMOVE_USER = gql`
+mutation removeUser {
+    removeUser {
+        _id
+        firstName
+        lastName
+    }
+}
+`;
 
 const CREATE_CATEGORY = gql`
 mutation CreateCategory($type: String!) {
@@ -32,6 +42,56 @@ mutation updateProject($title: String!, $description: String!, $priority: String
     Status
     priority
     Users
+  }
+}
+`;
+
+// queries
+
+const QUERY_USERS = gql`
+query allUsers {
+    users {
+      _id
+      firstName
+      lastName
+    }
+  }
+`;
+
+const QUERY_PROJECTS = gql`
+query getProjects($category: ID) {
+  projects(category: $category) {
+    _id
+    title
+    description
+    priority
+    dependencies
+    Status
+    category {
+      _id
+    }
+  }
+}
+`;
+
+const QUERY_SINGLE_PROJECT = gql`
+query singleProject($projectId: ID!) {
+    project(projectId: $projectId) {
+      _id
+      Users {
+        _id
+        firstName
+        lastName
+      }
+    }
+  }
+`;
+
+const QUERY_CATEGORIES = gql`
+{
+  categories {
+    _id
+    type
   }
 }
 `;

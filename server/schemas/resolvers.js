@@ -69,7 +69,7 @@ const resolvers = {
     },
 
     removeUser: async (parent, args, context) => {
-      if (context.user) {
+      if (context.user.isAdmin) {
         return User.findByIdAndDelete({ _id: context.user._id });
       }
       throw AuthenticationError;
@@ -127,6 +127,7 @@ const resolvers = {
       return { project };
 
     },
+    // admin mutation
     createCategory: async (parent, { type }, context) => {
 
       if (!context.user.isAdmin) {
@@ -138,7 +139,7 @@ const resolvers = {
 
       return category;
     },
-
+    // admin mutation
     updateCategory: async (parent, {categoryId, type}, context) => {
 
       if(!context.user.isAdmin) {

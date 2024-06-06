@@ -45,6 +45,7 @@ type Mutation {
     createProject(title: String!, description: String!, Status: String, priority: String!, Users: String!, dependencies: String, category: ID!): Project
     updateProject(projectId: ID!, title: String!, description: String!, Status: String, priority: String!, Users: String!, dependencies: String, category: ID!): Project
     createCategory(type: String!): Category
+    updateCategory(categoryId: ID!, type: String!): Category
     removeProject(projectId: ID!): Project
 }
 `;
