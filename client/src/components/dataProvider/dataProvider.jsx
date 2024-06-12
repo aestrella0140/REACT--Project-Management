@@ -34,21 +34,37 @@ const UPDATE_CATEGORY = gql`
 `;
 
 const CREATE_PROJECT = gql`
-mutation createProject($title: String!, $description: String!, $priority: String!, $Users: String!, $dependencies: String!, $category: ID!, $status: String) {
-  createProject(title: $title, description: $description, priority: $priority, Users: $Users, dependencies: $dependencies, category: $category, Status: $status) {
-    _id
-    Users 
-    Status
-    category {
+  mutation createProject(
+    $title: String!
+    $description: String!
+    $priority: String!
+    $Users: String!
+    $dependencies: String!
+    $category: ID!
+    $status: String
+  ) {
+    createProject(
+      title: $title
+      description: $description
+      priority: $priority
+      Users: $Users
+      dependencies: $dependencies
+      category: $category
+      Status: $status
+    ) {
       _id
-      type
+      Users
+      Status
+      category {
+        _id
+        type
+      }
+      dependencies
+      description
+      priority
+      title
     }
-    dependencies
-    description
-    priority
-    title
   }
-}
 `;
 
 const UPDATE_PROJECT = gql`
@@ -79,12 +95,12 @@ const UPDATE_PROJECT = gql`
 `;
 
 const REMOVE_PROJECT = gql`
-mutation removeProject {
-  removeProject {
-    _id
-    Users 
+  mutation removeProject {
+    removeProject {
+      _id
+      Users
+    }
   }
-}
 `;
 
 // queries
@@ -139,51 +155,69 @@ const QUERY_CATEGORIES = gql`
 
 const dataProvider = {
   getList: async (resource, params) => {
-    if (resource === 'projects') {
+    if (resource === "projects") {
       const { data } = await client.query({
         query: QUERY_PROJECTS,
         variables: { category: params.filter.category },
       });
       return { data: data.projects };
-    } else if (resource === 'categories') {
+    } else if (resource === "categories") {
       const { data } = await client.query({ query: QUERY_CATEGORIES });
       return { data: data.categories };
     }
   },
 
   getOne: async (resource, params) => {
-    if (resource === 'projects') {
-      const { data } = await client.query({ query: QUERY_SINGLE_PROJECT, variables: { projectId: params.id} });
-      return { data: data.project};
+    if (resource === "projects") {
+      const { data } = await client.query({
+        query: QUERY_SINGLE_PROJECT,
+        variables: { projectId: params.id },
+      });
+      return { data: data.project };
     }
   },
 
   create: async (resource, params) => {
-    if (resource === 'projects') {
-      const { data } = await client.mutate({ mutation: CREATE_PROJECT, variables: params.data });
+    if (resource === "projects") {
+      const { data } = await client.mutate({
+        mutation: CREATE_PROJECT,
+        variables: params.data,
+      });
       return { data: data.createProject };
-    } else if (resource === 'categories') {
-      const { data } = await client.mutate({ mutation: CREATE_CATEGORY, variables: params.data});
+    } else if (resource === "categories") {
+      const { data } = await client.mutate({
+        mutation: CREATE_CATEGORY,
+        variables: params.data,
+      });
       return { data: data.createCategory };
     }
   },
 
   update: async (resource, params) => {
-    if (resource === 'projects') {
-      const { data } = await client.mutate({ mutation: UPDATE_PROJECT, variables: params.data });
+    if (resource === "projects") {
+      const { data } = await client.mutate({
+        mutation: UPDATE_PROJECT,
+        variables: params.data,
+      });
       return { data: data.updateProject };
-    } else if (resource === 'categories') {
-      const { data } = await client.mutate({ mutation: CREATE_CATEGORY, variables: params.data });
-      return { data: data.updateCategory};
+    } else if (resource === "categories") {
+      const { data } = await client.mutate({
+        mutation: CREATE_CATEGORY,
+        variables: params.data,
+      });
+      return { data: data.updateCategory };
     }
   },
 
   delete: async (resource, params) => {
-    if (resource === 'projects') {
-      await client.mutate({ mutation: REMOVE_PROJECT, variables: { id: params.id} });
-      return { data: params.previousData};
-    } 
-  }
+    if (resource === "projects") {
+      await client.mutate({
+        mutation: REMOVE_PROJECT,
+        variables: { id: params.id },
+      });
+      return { data: params.previousData };
+    }
+  },
 };
 
 export default dataProvider;

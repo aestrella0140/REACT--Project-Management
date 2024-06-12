@@ -47,6 +47,7 @@ function App() {
        dataProvider={dataProvider}
       //  authProvider={authProvider}
        >
+        <Resource name="projects" list={getList} edit={update}/>
       <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh'}}>
         <StoreProvider>
         <Nav />
