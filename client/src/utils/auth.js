@@ -10,6 +10,8 @@ class AuthService {
         return token && !this.isTokenExpired(token) ? true : false;
     }
 
+    login = ({ jjjjjjjjjjjjj})
+
     isTokenExpired(token) {
         try {
             const decoded = decode(token);

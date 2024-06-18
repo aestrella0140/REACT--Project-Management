@@ -19,6 +19,7 @@ import { setContext } from "@apollo/client/link/context";
 import Nav from "./components/header/nav";
 import Footer from './components/footer/index';
 import { StoreProvider } from "./utils/GlobalState";
+import ProjectList from "./components/projectList";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -47,7 +48,7 @@ function App() {
        dataProvider={dataProvider}
       //  authProvider={authProvider}
        >
-        <Resource name="projects" list={getList} edit={update}/>
+        <Resource name="projects" list={ProjectList}/>
       <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh'}}>
         <StoreProvider>
         <Nav />
