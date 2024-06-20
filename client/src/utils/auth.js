@@ -10,7 +10,48 @@ class AuthService {
         return token && !this.isTokenExpired(token) ? true : false;
     }
 
-    login = ({ jjjjjjjjjjjjj})
+    login = async ({ firstName, lastName, password }) => {
+        try {
+            const response = await fetch('/api/admin/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ firstName, lastName, password })
+            });
+        if (response.ok) {
+            const data = await response.json();
+            if (data.token) {
+                localStorage.setItem('id_token', data.token);
+                window.location.assign('/');
+            } else {
+                throw new Error('Login failed');
+            }
+        } else {
+            throw new Error('Login failed');
+        }
+        } catch (err) {
+            console.log('Login failed:', err);
+        }
+     }
+
+     logout = () => {
+        localStorage.removeItem('id_token');
+        return Promise.resolve();
+     }
+
+     checkError = (error) => {
+
+     }
+
+     checkAuth = () => {
+        return this.loggedIn() ? Promise.resolve() : Promise.reject();
+     }
+
+     getPermissions = () => {
+        const role = this.getUser().role;
+        return role ? Promise.resolve(role) : Promise.reject();
+     }
 
     isTokenExpired(token) {
         try {
