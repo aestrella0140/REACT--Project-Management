@@ -41,7 +41,22 @@ class AuthService {
      }
 
      checkError = (error) => {
-
+        if (error.response) {
+            console.log(error.response.data);
+            console.log(error.response.status);
+            console.log(error.response.headers);
+            if (error.response.status === 401) {
+                throw new Error('unauthorized');
+            } else {
+                throw new Error(error.response.data.message);
+            }
+        } else if (error.request) {
+            console.log(error.request);
+            throw new Error('No response form server');
+        } else {
+            console.log('Error', error.message);
+            throw new Error('Request setup failed');
+        }
      }
 
      checkAuth = () => {
