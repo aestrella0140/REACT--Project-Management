@@ -14,7 +14,7 @@ export const CategoryCreate = ({ isAdmin }) => {
     }
 
     try {
-      const result = await createCategory({ variables: categoryType });
+      const result = await createCategory({ variables: { type: categoryType } });
       console.log(result);
       setCategoryType("");
     } catch (err) {
