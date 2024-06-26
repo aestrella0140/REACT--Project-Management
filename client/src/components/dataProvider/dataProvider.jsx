@@ -15,7 +15,7 @@ const REMOVE_USER = gql`
   }
 `;
 
-const CREATE_CATEGORY = gql`
+ export const CREATE_CATEGORY = gql`
   mutation CreateCategory($type: String!) {
     createCategory(type: $name) {
       id

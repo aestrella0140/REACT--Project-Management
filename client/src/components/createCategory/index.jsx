@@ -3,7 +3,7 @@ import { useMutation, gql } from "@apollo/client";
 
 import { CREATE_CATEGORY } from "../dataProvider/dataProvider";
 
-export const CategoryCreate = ({ isAdmin }) => {
+const CategoryCreate = ({ isAdmin }) => {
   const [createCategory, { loading, error }] = useMutation(CREATE_CATEGORY);
   const [categoryType, setCategoryType] = useState("");
 
@@ -34,3 +34,5 @@ export const CategoryCreate = ({ isAdmin }) => {
     </div>
   );
 };
+
+export default CategoryCreate;
