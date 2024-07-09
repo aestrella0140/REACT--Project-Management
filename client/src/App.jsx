@@ -21,6 +21,7 @@ import Footer from './components/footer/index';
 import { StoreProvider } from "./utils/GlobalState";
 import ProjectList from "./components/projectList";
 import CreateCategory from './components/createCategory';
+import CustomAppBar  from "./components/AppBar";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -47,6 +48,7 @@ function App() {
     <ApolloProvider client={client}>
       <Admin
        dataProvider={dataProvider}
+       appLayout={CustomAppBar}
       //  authProvider={authProvider}
        >
         <Resource name="projects" list={ProjectList} />
